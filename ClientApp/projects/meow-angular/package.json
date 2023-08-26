@@ -1,0 +1,28 @@
+{
+  "name": "meow-angular",
+  "version": "0.0.1",
+  "author": "程序喵 <455855199@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/program-meow/meow-angular"
+  },
+  "homepage": "https://github.com/program-meow/meow-angular",
+  "license": "MIT",
+  "keywords": [
+    "meow",
+    "antd",
+    "ng-zorro-antd",
+    "angular"
+  ],
+  "peerDependencies": {
+    "@angular/core": "^16.2.0",
+    "@angular/common": "^16.2.0",
+    "@angular/forms": "^16.2.0",
+    "ng-zorro-antd": "^16.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+  }
+}
