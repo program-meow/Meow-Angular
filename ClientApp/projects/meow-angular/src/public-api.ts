@@ -9,6 +9,9 @@ export * from "./lib/config/app-config";
 export * from "./lib/html/model/style";
 export * from "./lib/html/model/mouse-location";
 
+//导出组件
+export * from "./lib/component/component-base";
+
 //导出meow入口
 export * from "./lib/meow";
 export * from "./lib/meow.module";
