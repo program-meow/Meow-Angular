@@ -130,7 +130,43 @@
           }
         }
       }
+    },
+    "meow-angular": {
+      "projectType": "library",
+      "root": "projects/meow-angular",
+      "sourceRoot": "projects/meow-angular/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/meow-angular/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/meow-angular/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/meow-angular/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/meow-angular/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
-  "defaultProject": "Meow.Angular"
+  "defaultProject": "Meow.Angular",
+  "cli": {
+    "analytics": "3b15227a-d6ed-4e53-bc46-b063f9aa605c"
+  }
 }

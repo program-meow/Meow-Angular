@@ -1,5 +1,5 @@
 //================ util模块 ======================
-//Copyright 2023 何镇汐
+//Copyright 2023 程序喵
 //Licensed under the MIT license
 //================================================
 import { NgModule } from '@angular/core';
