@@ -5,6 +5,7 @@
 import { ElementRef } from '@angular/core';
 import { Scroll } from './scroll';
 import { Mouse } from './mouse';
+import { Style } from './style';
 
 /**
  * Html操作
@@ -20,6 +21,11 @@ export class Html {
    * 鼠标操作
    */
   private _mouse: Mouse | undefined;
+
+  /**
+   * 样式操作
+   */
+  private _style: Style | undefined;
 
   /**
    * 初始化Ioc操作
@@ -46,5 +52,15 @@ export class Html {
     if (!this._mouse)
       this._mouse = new Mouse();
     return this._mouse;
+  }
+
+  /**
+   * 样式操作
+   * @returns
+   */
+  get style(): Style {
+    if (!this._style)
+      this._style = new Style();
+    return this._style;
   }
 }

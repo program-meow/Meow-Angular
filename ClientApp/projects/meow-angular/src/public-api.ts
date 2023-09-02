@@ -1,6 +1,8 @@
 //导出模型
 export * from "./lib/model/key";
 export * from "./lib/model/view-model";
+export * from "./lib/model/query-parameter";
+export * from "./lib/model/page-list";
 
 //导出config
 export * from "./lib/config/app-config";
