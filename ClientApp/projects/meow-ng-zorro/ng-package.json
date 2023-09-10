@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/meow-angular",
+  "dest": "../../dist/meow-ng-zorro",
   "lib": {
     "entryFile": "src/public-api.ts"
   }
