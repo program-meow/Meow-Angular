@@ -2,6 +2,7 @@
 //Copyright 2023 程序喵
 //Licensed under the MIT license
 //================================================
+import { UUID } from './internal/uuid';
 
 /**
  * 左补位
@@ -29,4 +30,11 @@ export let padRight = (value: any, totalWidth: number = 2, paddingChar: string =
     value = value + paddingChar;
   }
   return value;
+}
+
+/**
+ * 创建唯一标识
+ */
+export let uuid = (): string => {
+  return UUID.UUID();
 }
