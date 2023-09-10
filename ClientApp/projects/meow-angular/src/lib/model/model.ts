@@ -9,23 +9,14 @@ import { Meow } from "./../meow";
  */
 export class Model {
     /**
-     * meow
+     * 公共操作
      */
-    private _meow: Meow;
+    protected meow: Meow;
 
     /**
      * 初始化模型
      */
     constructor() {
-        this._meow = new Meow(Meow.injector);
-    }
-
-    /**
-     * meow
-     */
-    meow(): Meow {
-        if (!this._meow)
-            this._meow = new Meow(Meow.injector);
-        return this._meow;
+        this.meow = new Meow(Meow.injector);
     }
 }
