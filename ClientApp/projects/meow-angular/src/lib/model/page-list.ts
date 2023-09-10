@@ -2,10 +2,12 @@
 //Copyright 2023 程序喵
 //Licensed under the MIT license
 //================================================
+import { Model } from "./model";
+
 /**
  * 分页列表
  */
-export class PageList<T> {
+export class PageList<T> extends Model {
   /**
    * 初始化分页列表
    * @param list 列表
@@ -15,6 +17,7 @@ export class PageList<T> {
    * @param pageCount 总页数
    */
   constructor(list?, page?: number, pageSize?: number, total?: number, pageCount?: number) {
+    super();
     if (!list)
       return;
     this.page = page || list.page || 1;

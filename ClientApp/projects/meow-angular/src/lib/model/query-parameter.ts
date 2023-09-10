@@ -2,16 +2,18 @@
 //Copyright 2023 程序喵
 //Licensed under the MIT license
 //=================================================
+import { Model } from "./model";
 import { DefaultConfig } from "../config/default-config";
 
 /**
  * 查询参数
  */
-export class QueryParameter {
+export class QueryParameter extends Model {
     /**
      * 初始化查询参数
      */
     constructor() {
+        super();
         this.page = 1;
         this.pageSize = DefaultConfig.pageSize;
     }
