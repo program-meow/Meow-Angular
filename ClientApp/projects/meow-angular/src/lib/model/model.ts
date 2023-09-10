@@ -11,11 +11,21 @@ export class Model {
     /**
      * meow
      */
-    protected meow: Meow = new Meow();
+    private _meow: Meow;
 
     /**
      * 初始化模型
      */
     constructor() {
+        this._meow = new Meow(Meow.injector);
+    }
+
+    /**
+     * meow
+     */
+    meow(): Meow {
+        if (!this._meow)
+            this._meow = new Meow(Meow.injector);
+        return this._meow;
     }
 }
