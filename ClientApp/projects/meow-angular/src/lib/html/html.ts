@@ -6,6 +6,7 @@ import { ElementRef } from '@angular/core';
 import { Scroll } from './scroll';
 import { Mouse } from './mouse';
 import { Style } from './style';
+import { Element } from './element';
 
 /**
  * Html操作
@@ -26,6 +27,11 @@ export class Html {
    * 样式操作
    */
   private _style: Style | undefined;
+
+  /**
+   * 元素操作
+   */
+  private _element: Element | undefined;
 
   /**
    * 初始化Ioc操作
@@ -62,5 +68,15 @@ export class Html {
     if (!this._style)
       this._style = new Style();
     return this._style;
+  }
+
+  /**
+   * 元素操作
+   * @returns
+   */
+  get element(): Element {
+    if (!this._element)
+      this._element = new Element();
+    return this._element;
   }
 }
