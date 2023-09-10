@@ -1,4 +1,5 @@
 //导出模型
+export * from "./lib/model/model";
 export * from "./lib/model/key";
 export * from "./lib/model/view-model";
 export * from "./lib/model/query-parameter";
