@@ -1,0 +1,20 @@
+<div class="context-menu-box" (contextmenu)="open($event);">
+  <ng-container>
+    <ng-content></ng-content>
+  </ng-container>
+  <ng-template [ngIf]="show">
+    <div class="context-menu" [ngStyle]="menu_style">
+      <menu-item [menuGroups]="data.groups" (selectMenuFun)="selectMenu($event)" [ngClass]="data._index"></menu-item>
+    </div>
+
+    <ng-container *ngFor="let group of data.groups; index as goup_index;">
+      <ng-container *ngFor="let menu of group.menus; index as menu_index;">
+        <ng-container *ngIf="menu&&menu.childs&&menu.childs.length>0">
+          <menu-child class="menu-child" [menuGroups]="menu.childs"
+            [ngClass]="['group_parent_'+menu._group_parent_index,'parent_'+menu._index]"
+            (selectMenuFun)="selectMenu($event)"></menu-child>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+  </ng-template>
+</div>

@@ -18,6 +18,7 @@
     "@angular/core": "^16.2.0",
     "@angular/common": "^16.2.0",
     "@angular/forms": "^16.2.0",
+    "@ant-design/icons": "^5.2.5",
     "ng-zorro-antd": "^16.1.0",
     "meow-angular": "^0.0.15",
     "@delon/abc": "^16.2.0",

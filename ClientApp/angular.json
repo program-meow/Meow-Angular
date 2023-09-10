@@ -163,6 +163,39 @@
           }
         }
       }
+    },
+    "meow-ng-zorro": {
+      "projectType": "library",
+      "root": "projects/meow-ng-zorro",
+      "sourceRoot": "projects/meow-ng-zorro/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/meow-ng-zorro/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/meow-ng-zorro/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/meow-ng-zorro/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/meow-ng-zorro/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "defaultProject": "Meow.Angular",

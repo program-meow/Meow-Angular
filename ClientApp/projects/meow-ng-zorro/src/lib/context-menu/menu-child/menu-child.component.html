@@ -1,0 +1,10 @@
+<menu-item [menuGroups]="menuGroups" (selectMenuFun)="childSelectMenuFun($event)"></menu-item>
+<ng-container *ngFor="let group of menuGroups; index as goup_index;">
+  <ng-container *ngFor="let menu of group.menus; index as menu_index;">
+    <ng-container *ngIf="menu&&menu.childs&&menu.childs.length>0">
+      <menu-child class="menu-child" [menuGroups]="menu.childs"
+        [ngClass]="['group_parent_'+menu._group_parent_index,'parent_'+menu._index]"
+        (selectMenuFun)="childSelectMenuFun($event)"></menu-child>
+    </ng-container>
+  </ng-container>
+</ng-container>
