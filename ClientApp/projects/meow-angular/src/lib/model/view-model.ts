@@ -9,8 +9,8 @@ import { IKey } from "./key";
  * 视图模型
  */
 export class ViewModel extends Model implements IKey {
-    /**
-     * 标识
-     */
-    id: string;
+  /**
+   * 标识
+   */
+  id: string;
 }

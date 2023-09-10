@@ -4,6 +4,8 @@ export * from "./lib/model/key";
 export * from "./lib/model/view-model";
 export * from "./lib/model/query-parameter";
 export * from "./lib/model/page-list";
+export * from "./lib/model/coordinates-2d";
+export * from "./lib/model/coordinates-3d";
 
 //导出config
 export * from "./lib/config/app-config";

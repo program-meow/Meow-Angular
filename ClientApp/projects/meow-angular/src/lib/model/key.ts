@@ -7,8 +7,8 @@
  * 标识
  */
 export interface IKey {
-    /**
-     * 标识
-     */
-    id: string;
+  /**
+   * 标识
+   */
+  id: string;
 }
