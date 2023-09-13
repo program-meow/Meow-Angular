@@ -36,6 +36,11 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
   @Input()
   makeUp: boolean = false;
   /**
+   * 定位：true:采用window定位; false:采用事件定位;默认false
+   */
+  @Input()
+  location: boolean = false;
+  /**
    * 数据
    */
   data: ContextMenuData = new ContextMenuData();
@@ -108,7 +113,7 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
       return false;
     this.show = true;
 
-    var defaultLocation = this.meow.html.mouse.location(event);
+    var defaultLocation = this.meow.html.mouse.location(location ? null : event);
     var eventLocation = this.getEventLocation(event);
     this._init_style_time = setInterval(() => {
       this.initStyle(defaultLocation, eventLocation);
@@ -144,7 +149,7 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
    * 初始化样式
    */
   private initStyle(defaultLocation: MouseLocation, eventLocation: any): void {
-    var location = this.location(defaultLocation, eventLocation);
+    var location = this.getLocation(defaultLocation, eventLocation);
     this.menu_style.opacity = 1;
     this.menu_style.top = location.y + 'px';
     this.menu_style.left = location.x + 'px';
@@ -152,9 +157,9 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
   }
 
   /**
-   * 定位
+   * 获取定位
    */
-  private location(defaultLocation: MouseLocation, eventLocation: any): Coordinates2D {
+  private getLocation(defaultLocation: MouseLocation, eventLocation: any): Coordinates2D {
     clearInterval(this._init_style_time);
     if (!defaultLocation)
       return new Coordinates2D();
