@@ -91,6 +91,6 @@ export class MenuItemComponent extends ComponentBase implements OnInit {
   }
 
   mousedown(menu: ContextMenu) {
-    this.selectMenuFun.emit({ code: menu.code, flag: menu.childs ? menu.childs.length > 0 ? false : true : true });
+    this.selectMenuFun.emit({ code: menu.code, flag: menu.childs ? menu.childs.length > 0 ? false : true : true, data: null });
   }
 }

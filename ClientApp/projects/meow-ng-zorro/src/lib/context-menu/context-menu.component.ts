@@ -18,10 +18,6 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
    */
   show: boolean = false;
   /**
-   * 可否关闭
-   */
-  canClose: boolean = true;
-  /**
    * 菜单样式
    */
   menu_style: Style = new Style();
@@ -31,15 +27,10 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
   @Input()
   menus: Array<ContextMenuGroupViewModel> = new Array<ContextMenuGroupViewModel>();
   /**
-   * 补偿 若启用补偿，则代表右键菜单需要圈定在显示区内显示，默认false（禁用）
+   * 固定：固定于鼠标事件位置。false 则菜单显示超出会计算偏移量，使菜单始终显示在区域内。 默认true
    */
   @Input()
-  makeUp: boolean = false;
-  /**
-   * 定位：true:采用window定位; false:采用事件定位;默认false
-   */
-  @Input()
-  location: boolean = false;
+  fixed: boolean = true;
   /**
    * 样式
    */
@@ -54,15 +45,19 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
    */
   menuToRight: boolean = true;
   /**
-   * 初始化样式计时器
+   * 自定义数据
    */
-  _init_style_time: any;
+  private _custom_data: any;
+  /**
+   * 可否关闭
+   */
+  private _can_close: boolean = true;
 
   /**
    * 选择菜单方法
    */
   @Output()
-  select: EventEmitter<string> = new EventEmitter<string>();
+  select: EventEmitter<SelectMenu> = new EventEmitter<SelectMenu>();
 
   /**
    * 监听全局鼠标按下事件
@@ -70,10 +65,10 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
    */
   @HostListener('window:mouseup', ['$event'])
   onMouseClick(event: any) {
-    if (this.canClose) {
+    if (this._can_close) {
       this.close();
     } else {
-      this.canClose = true;
+      this._can_close = true;
     }
   }
 
@@ -99,31 +94,33 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
   close(): void {
     this.clearStyle();
     this.show = false;
-    this.canClose = true;
+    this._can_close = true;
   }
+
 
   /**
    * 打开
+   * @param event 鼠标事件
+   * @param data 自定义数据
    */
-  open(event: any): boolean {
+  open(event: any, data: any = null): void {
     if (!event)
-      return false;
+      return;
     event.preventDefault();
     event.stopPropagation();
     if (!this.data)
-      return false;
+      return;
     if (!this.data.groups)
-      return false;
+      return;
     if (this.data.groups.length === 0)
-      return false;
+      return;
+    this._custom_data = data;
     this.show = true;
-
-    var defaultLocation = this.meow.html.mouse.location(location ? null : event);
+    var defaultLocation = this.meow.html.mouse.location(event);
     var eventLocation = this.getEventLocation(event);
-    this._init_style_time = setInterval(() => {
+    setTimeout(() => {
       this.initStyle(defaultLocation, eventLocation);
     }, 100);
-    return false;
   }
 
   /**
@@ -165,11 +162,10 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
    * 获取定位
    */
   private getLocation(defaultLocation: MouseLocation, eventLocation: any): Coordinates2D {
-    clearInterval(this._init_style_time);
     if (!defaultLocation)
       return new Coordinates2D();
     var result = { x: defaultLocation.x, y: defaultLocation.y };
-    if (!this.makeUp)
+    if (this.fixed)
       return result;
     if (!eventLocation)
       return result;
@@ -222,7 +218,6 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
    * 清除样式
    */
   private clearStyle(): void {
-    clearInterval(this._init_style_time);
     if (!this.menu_style)
       return;
     this.menu_style.opacity = 0;
@@ -235,10 +230,11 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
    * 选择菜单
    */
   selectMenu(selectMenu: SelectMenu) {
-    this.canClose = selectMenu.flag;
+    this._can_close = selectMenu.flag;
     if (!selectMenu.flag)
       return;
     this.close();
-    this.select?.emit(selectMenu.code);
+    selectMenu.data = this._custom_data;
+    this.select?.emit(selectMenu);
   }
 }

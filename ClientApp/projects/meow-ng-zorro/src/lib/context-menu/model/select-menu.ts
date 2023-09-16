@@ -10,4 +10,8 @@ export class SelectMenu {
    * 状态
    */
   flag: boolean = true;
+  /**
+   * 状态
+   */
+  data: any = null;
 }
