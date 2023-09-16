@@ -41,6 +41,11 @@ export class ContextMenuComponent extends ComponentBase implements OnInit {
   @Input()
   location: boolean = false;
   /**
+   * 样式
+   */
+  @Input()
+  style: Style = new Style();
+  /**
    * 数据
    */
   data: ContextMenuData = new ContextMenuData();

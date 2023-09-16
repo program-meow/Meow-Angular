@@ -1,4 +1,4 @@
-<div class="context-menu-box" (contextmenu)="open($event);">
+<div class="context-menu-box" [ngStyle]="style" (contextmenu)="open($event);">
   <ng-container>
     <ng-content></ng-content>
   </ng-container>
