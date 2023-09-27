@@ -4,6 +4,7 @@
 //========================================================
 import { Injectable } from '@angular/core';
 import { AuthorConfig } from './author-config'
+import { TenantConfig } from "./tenant-config";
 
 /**
  * 应用配置
@@ -11,9 +12,17 @@ import { AuthorConfig } from './author-config'
 @Injectable()
 export class AppConfig {
   /**
+   * Api端点地址,范例: https://api.a.com
+   */
+  apiEndpoint?: string;
+  /**
    * 著作配置
    */
   author: AuthorConfig = new AuthorConfig();
+  /**
+   * 租户配置
+   */
+  tenant?: TenantConfig;
 }
 
 /**
