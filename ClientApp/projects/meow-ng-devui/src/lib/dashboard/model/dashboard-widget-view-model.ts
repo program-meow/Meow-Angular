@@ -6,13 +6,6 @@ import { GridStackOptions } from 'gridstack';
  */
 export class DashboardWidgetViewModel extends ViewModel {
   /**
-   * 初始化
-   */
-  constructor() {
-    super();
-  }
-
-  /**
    * x轴位置 (默认: 0)
    */
   x: number = 0;

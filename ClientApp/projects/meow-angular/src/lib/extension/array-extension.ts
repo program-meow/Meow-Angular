@@ -12,35 +12,35 @@ declare global {
     /**
      * 是否空数组,undefined和null返回false,[]返回true
      */
-    isEmpty(): boolean;
+    meowIsEmpty(): boolean;
     /**
      * 添加到数组
      * @param item 项
      * @param index 索引
      */
-    add(item, index?: number);
+    meowAdd(item, index?: number);
     /**
      * 从数组中移除子集
      * @param predicate 条件
      */
-    removeBy<T>(predicate: (value: T) => boolean): Array<T>;
+    meowRemoveBy<T>(predicate: (value: T) => boolean): Array<T>;
     /**
      * 分组
      * @param property 分组属性
      */
-    groupBy<T>(property?: (t: T) => any): Map<string, T[]>;
+    meowGroupBy<T>(property?: (t: T) => any): Map<string, T[]>;
     /**
      * 去重复
      * @param property 属性
      */
-    distinctBy<T>(property?: (t: T) => any): T[];
+    meowDistinctBy<T>(property?: (t: T) => any): T[];
   }
 }
 
 /**
  * 是否空数组,undefined和null返回false,[]返回true
  */
-Array.prototype.isEmpty = function (): boolean {
+Array.prototype.meowIsEmpty = function (): boolean {
   return helper.isEmptyArray(this);
 }
 
@@ -49,7 +49,7 @@ Array.prototype.isEmpty = function (): boolean {
  * @param item 项
  * @param index 索引
  */
-Array.prototype.add = function (item, index?: number) {
+Array.prototype.meowAdd = function (item, index?: number) {
   return helper.add(this, item, index);
 }
 
@@ -57,7 +57,7 @@ Array.prototype.add = function (item, index?: number) {
  * 从数组中移除子集
  * @param predicate 条件
  */
-Array.prototype.removeBy = function <T>(predicate: (value: T) => boolean): Array<T> {
+Array.prototype.meowRemoveBy = function <T>(predicate: (value: T) => boolean): Array<T> {
   return helper.removeBy(this, predicate);
 }
 
@@ -65,7 +65,7 @@ Array.prototype.removeBy = function <T>(predicate: (value: T) => boolean): Array
  * 分组
  * @param property 分组属性
  */
-Array.prototype.groupBy = function <T>(property?: (t: T) => any): Map<string, T[]> {
+Array.prototype.meowGroupBy = function <T>(property?: (t: T) => any): Map<string, T[]> {
   return helper.groupBy(this, property);
 }
 
@@ -73,7 +73,7 @@ Array.prototype.groupBy = function <T>(property?: (t: T) => any): Map<string, T[
  * 去重复
  * @param property 属性
  */
-Array.prototype.distinctBy = function <T>(property?: (t: T) => any): T[] {
+Array.prototype.meowDistinctBy = function <T>(property?: (t: T) => any): T[] {
   return helper.distinctBy(this, property);
 }
 

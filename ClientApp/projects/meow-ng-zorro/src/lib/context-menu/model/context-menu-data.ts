@@ -1,4 +1,4 @@
-import { ViewModel } from 'meow-angular';
+import { Meow, ViewModel } from 'meow-angular';
 import { ContextMenuGroupViewModel } from './context-menu-group-view-model';
 import { ContextMenuGroup } from './context-menu-group';
 
@@ -6,6 +6,10 @@ import { ContextMenuGroup } from './context-menu-group';
  * 关联菜单组
  */
 export class ContextMenuData extends ViewModel {
+  /**
+   * 公共操作
+   */
+  private meow: Meow;
   /**
    * 索引
    */
@@ -21,6 +25,7 @@ export class ContextMenuData extends ViewModel {
    */
   constructor(viewModels: Array<ContextMenuGroupViewModel> = new Array<ContextMenuGroupViewModel>()) {
     super();
+    this.meow = new Meow(Meow.injector);
     this.id = this.meow.const.uuid();
     this._index = this.id.replaceAll('-', '');
     this.groups = new Array<ContextMenuGroup>();

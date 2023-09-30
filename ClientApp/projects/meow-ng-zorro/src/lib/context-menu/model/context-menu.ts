@@ -1,3 +1,4 @@
+import { Meow } from 'meow-angular';
 import { ContextMenuViewModel } from './context-menu-view-model';
 import { ContextMenuGroup } from './context-menu-group';
 
@@ -5,6 +6,10 @@ import { ContextMenuGroup } from './context-menu-group';
  * 关联菜单
  */
 export class ContextMenu extends ContextMenuViewModel {
+  /**
+   * 公共操作
+   */
+  private meow: Meow;
   /**
    * 索引
    */
@@ -35,6 +40,7 @@ export class ContextMenu extends ContextMenuViewModel {
    */
   constructor(viewModel: ContextMenuViewModel, _parent_index: string = "", _group_parent_index: string = "", _overall_sort: number = 0) {
     super();
+    this.meow = new Meow(Meow.injector);
     this.map(viewModel, _parent_index, _group_parent_index);
     this.toSort();
   }

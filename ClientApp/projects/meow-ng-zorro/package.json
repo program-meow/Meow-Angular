@@ -1,6 +1,6 @@
 {
   "name": "meow-ng-zorro",
-  "version": "0.0.7",
+  "version": "0.0.10",
   "author": "程序喵 <455855199@qq.com>",
   "repository": {
     "type": "git",
@@ -20,7 +20,7 @@
     "@angular/forms": "^16.2.0",
     "@ant-design/icons": "^5.2.5",
     "ng-zorro-antd": "^16.1.0",
-    "meow-angular": "^0.0.18",
+    "meow-angular": "^0.0.21",
     "@delon/abc": "^16.2.0",
     "@delon/theme": "^16.2.0",
     "@delon/util": "^16.2.0",
