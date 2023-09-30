@@ -1,68 +1,59 @@
 import { ViewModel } from 'meow-angular';
-import { GridStackOptions } from 'gridstack';
 
 /**
  * 仪表盘控件
  */
 export class DashboardWidgetViewModel extends ViewModel {
   /**
-   * x轴位置 (默认: 0)
+   * 坐标 x（第 x 行），首行为第 0 行
    */
   x: number = 0;
   /**
-   * y轴位置 (默认: 0)
+   * 坐标 y（第 y 列），首列为第 0 列
    */
   y: number = 0;
   /**
-   * 宽度 (默认: 1)
+   * widget 宽度（单位列）
    */
   width: number = 1;
   /**
-   * 高度 (默认: 1)
+   * widget 高度（单位行）
    */
   height: number = 1;
   /**
-   * 如果为true，则x、y参数将被忽略，小部件将被放置在第一个可用位置 (默认: false)
+   * widget 调整大小最大宽度，0 为不限制
    */
-  autoPosition: boolean = false;
+  maxWidth: number = 0;
   /**
-   * 调整大小/创建过程中允许的最小宽度 (默认: 1)
+   * widget 调整大小最大高度，0 为不限制
    */
-  minWidth: number = 1;
+  maxHeight: number = 0;
   /**
-   * 调整大小/创建过程中允许的最大宽度 (默认: 1)
+   * widget 调整大小最小宽度，0 为不限制
    */
-  maxWidth: number = 100;
+  minWidth: number = 0;
   /**
-   * 调整大小/创建过程中允许的最小高度 (默认: 1)
+   * widget 调整大小最小高度，0 为不限制
    */
-  minHeight: number = 1;
+  minHeight: number = 0;
   /**
-   * 调整大小/创建过程中允许的最大高度 (默认: 1)
-   */
-  maxHeight: number = 100;
-  /**
-   * 阻止调整大小 (默认: false)
+   * widget 是否允许调整大小
    */
   noResize: boolean = false;
   /**
-   * 阻止移动 (默认: false)
+   * widget 是否允许移动
    */
   noMove: boolean = false;
   /**
-   * 锁定 (默认: false)
+   * 是否忽略 x，y 自动寻找空位，仅初始化有效
+   */
+  autoPosition: boolean = false;
+  /**
+   * widget 是否锁定位置，不被其他 widget 位置挤压
    */
   locked: boolean = false;
   /**
-   * html作为内容附加到内部
-   */
-  content: string = '';
-  /**
-   * 可选的嵌套网格选项和子项列表，然后在运行时转换为实际实例以从中获取选项
-   */
-  subGridOpts: GridStackOptions = null;
-  /**
-   * 组件数据
+   * 用户自定义数据，可用于区分传递等等
    */
   widgetData: any = null;
 }
