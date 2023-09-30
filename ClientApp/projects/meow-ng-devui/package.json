@@ -1,6 +1,6 @@
 {
   "name": "meow-ng-devui",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "author": "程序喵 <455855199@qq.com>",
   "repository": {
     "type": "git",
@@ -21,7 +21,7 @@
     "@devui-design/icons": "^1.3.0",
     "gridstack": "^6.0.3",
     "ng-devui": "^16.0.0",
-    "meow-angular": "^0.0.15",
+    "meow-angular": "^0.0.18",
     "@delon/abc": "^16.2.0",
     "@delon/theme": "^16.2.0",
     "@delon/util": "^16.2.0",

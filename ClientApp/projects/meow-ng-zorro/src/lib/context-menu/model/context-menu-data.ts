@@ -21,7 +21,7 @@ export class ContextMenuData extends ViewModel {
    */
   constructor(viewModels: Array<ContextMenuGroupViewModel> = new Array<ContextMenuGroupViewModel>()) {
     super();
-    this.id = this.meow.helper.uuid();
+    this.id = this.meow.const.uuid();
     this._index = this.id.replaceAll('-', '');
     this.groups = new Array<ContextMenuGroup>();
     if (!viewModels)

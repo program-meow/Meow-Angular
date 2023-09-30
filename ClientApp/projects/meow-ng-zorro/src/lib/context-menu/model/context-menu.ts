@@ -45,7 +45,7 @@ export class ContextMenu extends ContextMenuViewModel {
    * @param _parent_index 父索引
    */
   private map(viewModel: ContextMenuViewModel, _parent_index: string, _group_parent_index: string) {
-    this.id = viewModel.id || this.meow.helper.uuid();
+    this.id = viewModel.id || this.meow.const.uuid();
     this.code = viewModel.code;
     this.name = viewModel.name;
     this.icon = viewModel.icon;

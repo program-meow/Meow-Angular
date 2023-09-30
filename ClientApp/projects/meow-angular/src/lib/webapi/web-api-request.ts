@@ -348,11 +348,11 @@ export class WebApiRequest<T> {
       try {
         if (blob.type === "application/octet-stream")
           return window.URL.createObjectURL(blob);
-        let value = await this.meow.helper.blobToStringAsync(blob);
+        let value = await this.meow.helper.toStringFromBlobAsync(blob);
         if (blob.type === "text/plain")
           return value;
         if (blob.type === "application/json") {
-          let result = this.meow.helper.toObjectFromJson<Result<any>>(value);
+          let result = this.meow.helper.toJsonObject<Result<any>>(value);
           if (result.code === StateCode.Ok)
             return result.data;
           if (result.code === StateCode.Unauthorized) {

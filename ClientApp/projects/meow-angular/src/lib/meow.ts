@@ -3,14 +3,15 @@
 //Licensed under the MIT license
 //================================================
 import { Injector, ElementRef } from '@angular/core';
+import { Const } from "./common/const";
 import * as Helper from './common/helper';
 import { AppConfig } from './config/app-config';
 import { ModuleConfig } from './config/module-config';
 import { Ioc } from './common/ioc';
-import { Url } from "./common/url";
 import { Html } from './html/html';
 import { Message } from './message/message';
 import { Loading } from "./common/loading";
+import { Url } from "./common/url";
 import { Http } from "./http/http";
 import { WebApi } from "./webapi/web-api";
 
@@ -60,6 +61,11 @@ export class Meow {
    * 全局注入器
    */
   static injector: Injector;
+
+  /**
+   * 常量
+   */
+  const = Const;
 
   /**
    * 公共操作

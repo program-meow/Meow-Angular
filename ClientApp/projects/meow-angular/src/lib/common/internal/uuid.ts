@@ -32,5 +32,4 @@ export class UUID {
       .toString(16)
       .substring(1);
   }
-
 }
