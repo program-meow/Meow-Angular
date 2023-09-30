@@ -232,11 +232,11 @@ export let to = <T>(value: any): T => {
  * @param paddingChar 填充字符,默认:'0'
 */
 export let toPadLeft = (value: any, totalWidth: number = 2, paddingChar: string = '0'): string => {
-  value = String(value);
-  while (value.length < totalWidth) {
-    value = paddingChar + value;
+  let str = toString(value);
+  while (str.length < totalWidth) {
+    str = paddingChar + str;
   }
-  return value;
+  return str;
 }
 
 /**
@@ -246,11 +246,11 @@ export let toPadLeft = (value: any, totalWidth: number = 2, paddingChar: string 
  * @param paddingChar 填充字符,默认:'0'
 */
 export let toPadRight = (value: any, totalWidth: number = 2, paddingChar: string = '0'): string => {
-  value = String(value);
-  while (value.length < totalWidth) {
-    value = value + paddingChar;
+  let str = toString(value);
+  while (str.length < totalWidth) {
+    str = str + paddingChar;
   }
-  return value;
+  return str;
 }
 
 //==================== 方法 ====================
