@@ -5,7 +5,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { NzButtonModule } from 'ng-zorro-antd/button';
 
 /**
  * util模块
@@ -15,7 +14,7 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
 
   ],
   imports: [
-    CommonModule, FormsModule, NzButtonModule
+    CommonModule, FormsModule
   ],
   exports: [
 

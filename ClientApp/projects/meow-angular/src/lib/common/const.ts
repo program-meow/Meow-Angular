@@ -12,6 +12,10 @@ export class Const {
    * 空GUID
    */
   static guidEmpty = "00000000-0000-0000-0000-000000000000";
+  /**
+   * 默认GUID
+   */
+  static guidDefault = "00000000-0000-0000-0000-000000000001";
 
   /**
    * 创建唯一标识

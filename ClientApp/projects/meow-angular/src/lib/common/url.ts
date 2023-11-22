@@ -57,8 +57,8 @@ export class Url {
     let apiPrefix = this.getApiPrefix();
     if (!apiPrefix)
       return url;
-    apiPrefix = this.meow.helper.removeStart(apiPrefix, "/");
-    apiPrefix = this.meow.helper.removeEnd(apiPrefix, "/");
+    apiPrefix = this.meow.helper.trimStart(apiPrefix, "/");
+    apiPrefix = this.meow.helper.trimEnd(apiPrefix, "/");
     return `/${apiPrefix}/api/${url}`;
   }
 
@@ -82,7 +82,7 @@ export class Url {
         return;
       path = path.replace("\\", "/");
       if (path.endsWith("/"))
-        path = this.meow.helper.removeEnd(path, "/");
+        path = this.meow.helper.trimEnd(path, "/");
       result += path;
     });
     return result;

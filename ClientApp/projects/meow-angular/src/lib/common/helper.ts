@@ -112,7 +112,7 @@ export let removeBy = <T>(source: Array<T>, predicate: (value: T) => boolean): A
  * @param source 值
  * @param start 要移除的值
  */
-export let removeStart = (value: string, start: string): string => {
+export let trimStart = (value: string, start: string): string => {
   return systemTrimStart(value, start);
 }
 
@@ -121,7 +121,7 @@ export let removeStart = (value: string, start: string): string => {
  * @param source 值
  * @param end 要移除的值
  */
-export let removeEnd = (value: string, end: string): string => {
+export let trimEnd = (value: string, end: string): string => {
   return systemTrimEnd(value, end);
 }
 
@@ -317,8 +317,8 @@ export function getIds(data) {
 export let joinUrl = (url: string, path: string) => {
   if (!url || !path)
     return url;
-  url = removeEnd(url, "/");
-  path = removeStart(path, "/");
+  url = trimEnd(url, "/");
+  path = trimStart(path, "/");
   return `${url}/${path}`;
 }
 
@@ -341,7 +341,7 @@ function getHostUrl(url: string, host: string) {
     return null;
   if (url.startsWith("http"))
     return url;
-  host = removeEnd(host, "/");
+  host = trimEnd(host, "/");
   if (url.startsWith("/")) {
     if (host)
       return `${host}${url}`;
