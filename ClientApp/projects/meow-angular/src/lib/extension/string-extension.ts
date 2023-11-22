@@ -81,22 +81,4 @@ export class StringExtension {
   toList<T>(separator: string = ','): T[] {
     return helper.toList(this.value, separator);
   }
-
-  /**
-   * 左补位
-   * @param totalWidth 总长度,默认:2
-   * @param paddingChar 填充字符,默认:'0'
-   */
-  toPadLeft(totalWidth: number = 2, paddingChar: string = '0'): string {
-    return helper.toPadLeft(this.value, totalWidth, paddingChar);
-  }
-
-  /**
-   * 右补位
-   * @param totalWidth 总长度,默认:2
-   * @param paddingChar 填充字符,默认:'0'
-  */
-  toPadRight(totalWidth: number = 2, paddingChar: string = '0'): string {
-    return helper.toPadRight(this.value, totalWidth, paddingChar);
-  }
 }

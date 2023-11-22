@@ -225,34 +225,6 @@ export let to = <T>(value: any): T => {
   return <T>value;
 }
 
-/**
- * 左补位
- * @param value 值
- * @param totalWidth 总长度,默认:2
- * @param paddingChar 填充字符,默认:'0'
-*/
-export let toPadLeft = (value: any, totalWidth: number = 2, paddingChar: string = '0'): string => {
-  let str = toString(value);
-  while (str.length < totalWidth) {
-    str = paddingChar + str;
-  }
-  return str;
-}
-
-/**
- * 右补位
- * @param value 值
- * @param totalWidth 总长度,默认:2
- * @param paddingChar 填充字符,默认:'0'
-*/
-export let toPadRight = (value: any, totalWidth: number = 2, paddingChar: string = '0'): string => {
-  let str = toString(value);
-  while (str.length < totalWidth) {
-    str = str + paddingChar;
-  }
-  return str;
-}
-
 //==================== 方法 ====================
 
 /**
@@ -378,4 +350,22 @@ function getHostUrl(url: string, host: string) {
   if (host)
     return `${host}/api/${url}`;
   return `/api/${url}`;
+}
+
+/**
+ * 随机颜色
+ */
+export let randomColor = () => {
+  let value = Math.random().toString(16).substring(2, 8).padEnd(6, '0');
+  return `#${value}`;
+}
+
+/**
+ * 随机简易字符串
+ * @param len 长度 默认：6 
+ */
+export let randomEasyString = (len = 6) => {
+  return len > 11
+    ? randomEasyString(11) + randomEasyString(len - 11)
+    : Math.random().toString(36).substring(2, 2 + len).padEnd(len, '0');
 }

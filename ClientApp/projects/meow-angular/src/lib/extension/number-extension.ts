@@ -42,22 +42,4 @@ export class NumberExtension {
   constructor(value: number) {
     this.value = value;
   }
-
-  /**
-   * 左补位
-   * @param totalWidth 总长度,默认:2
-   * @param paddingChar 填充字符,默认:'0'
-   */
-  toPadLeft(totalWidth: number = 2, paddingChar: string = '0'): string {
-    return helper.toPadLeft(this.value, totalWidth, paddingChar);
-  }
-
-  /**
-   * 右补位
-   * @param totalWidth 总长度,默认:2
-   * @param paddingChar 填充字符,默认:'0'
-   */
-  toPadRight(totalWidth: number = 2, paddingChar: string = '0'): string {
-    return helper.toPadRight(this.value, totalWidth, paddingChar);
-  }
 }
