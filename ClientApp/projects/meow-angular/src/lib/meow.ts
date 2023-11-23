@@ -4,6 +4,7 @@
 //================================================
 import { Injector, ElementRef } from '@angular/core';
 import { Const } from "./common/const";
+import { EventBus } from "./common/eventbus";
 import * as Helper from './common/helper';
 import { AppConfig } from './config/app-config';
 import { ModuleConfig } from './config/module-config';
@@ -19,6 +20,10 @@ import { WebApi } from "./webapi/web-api";
  * 操作入口
  */
 export class Meow {
+  /**
+   * 事件总线操作
+   */
+  private _eventbus: EventBus;
   /**
    * Ioc操作
    */
@@ -71,6 +76,15 @@ export class Meow {
    * 公共操作
    */
   helper = Helper;
+
+  /**
+   * 事件总线操作
+   */
+  get eventbus() {
+    if (!this._eventbus)
+      this._eventbus = new EventBus(this);
+    return this._eventbus;
+  };
 
   /**
    * Ioc操作

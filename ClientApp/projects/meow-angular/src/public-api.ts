@@ -1,3 +1,7 @@
+//导出auth
+export * from "./lib/auth/auth-guard";
+export * from "./lib/auth/auth.service";
+
 //导出组件
 export * from "./lib/component/component-base";
 

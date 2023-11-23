@@ -15,20 +15,13 @@
     "angular"
   ],
   "peerDependencies": {
-    "@angular/core": "^16.2.0",
-    "@angular/common": "^16.2.0",
-    "@angular/forms": "^16.2.0",
-    "@ant-design/icons": "^5.2.5",
-    "ng-zorro-antd": "^16.1.0",
-    "meow-angular": "^0.0.23",
-    "@delon/abc": "^16.2.0",
-    "@delon/theme": "^16.2.0",
-    "@delon/util": "^16.2.0",
-    "lodash-es": "~4.17.21",
-    "date-fns": "~2.30.0",
-    "ngx-tinymce": "^16.0.0",
-    "ng-event-bus": "~5.2.0",
-    "angular-oauth2-oidc": "^15.0.1"
+    "@angular/core": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/forms": "^17.0.0",
+    "ng-zorro-antd": "^17.0.0",
+    "lodash-es": "^4.17.21",
+    "date-fns": "^2.30.0",
+    "rxjs": "^7.8.1"
   },
   "dependencies": {
     "tslib": "^2.3.0"

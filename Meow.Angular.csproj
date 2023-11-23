@@ -21,6 +21,12 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ClientApp\projects\meow-angular-ng-zorro-antd-context-menu\" />
+    <Folder Include="ClientApp\projects\meow-angular-ng-zorro-antd\src\lib\" />
+    <Folder Include="ClientApp\projects\meow-angular\src\lib\auth\" />
+  </ItemGroup>
+
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
