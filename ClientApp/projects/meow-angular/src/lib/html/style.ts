@@ -35,8 +35,8 @@ export class Style {
     const element = id ? document.querySelector(id) as HTMLElement : document.documentElement;
     if (!element)
       return;
-    const themeKeys = Object.keys(properties);
-    themeKeys.forEach(key => {
+    const keys = Object.keys(properties);
+    keys.forEach(key => {
       element.style.setProperty(key, properties[key]);
     })
   }

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { I18nKeys } from "../config/i18n-keys";
 import { Result } from '../response/result';
 import { FailResult } from "../response/fail-result";
-import { StateCode } from "../response/state-code";
+import { StateCodeEnum } from "../response/state-code-enum";
 import { HttpContentType } from "../http/http-content-type";
 import { HttpRequest } from "../http/http-request";
 import { WebApiHandleOptions } from "./web-api-handle-options";
@@ -229,11 +229,11 @@ export class WebApiRequest<T> {
   private handleOk(options: WebApiHandleOptions<T>, result: Result<T>) {
     if (!result)
       return;
-    if (result.code === StateCode.Ok) {
+    if (result.code === StateCodeEnum.Ok) {
       options.ok && options.ok(result.data);
       return;
     }
-    if (result.code === StateCode.Unauthorized) {
+    if (result.code === StateCodeEnum.Unauthorized) {
       this.handleUnauthorize(options);
       return;
     }
@@ -293,7 +293,7 @@ export class WebApiRequest<T> {
    * 处理业务异常
    */
   private handleBusinessException(result: Result<T>) {
-    if (result.code === StateCode.Fail) {
+    if (result.code === StateCodeEnum.Fail) {
       this.meow.message.error(result.message);
     }
   }
@@ -353,13 +353,13 @@ export class WebApiRequest<T> {
           return value;
         if (blob.type === "application/json") {
           let result = this.meow.helper.toJsonObject<Result<any>>(value);
-          if (result.code === StateCode.Ok)
+          if (result.code === StateCodeEnum.Ok)
             return result.data;
-          if (result.code === StateCode.Unauthorized) {
+          if (result.code === StateCodeEnum.Unauthorized) {
             this.handleUnauthorize();
             return null;
           }
-          if (result.code === StateCode.Fail) {
+          if (result.code === StateCodeEnum.Fail) {
             this.handleBusinessException(result);
             return null;
           }

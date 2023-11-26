@@ -6,11 +6,7 @@
 /**
  * 状态码
  */
-export enum StateCode {
-  /**
-   * 失败
-   */
-  Fail = "500",
+export enum StateCodeEnum {
   /**
    * 成功
    */
@@ -18,5 +14,9 @@ export enum StateCode {
   /**
    * 未授权
    */
-  Unauthorized = "401"
+  Unauthorized = "401",
+  /**
+   * 失败
+   */
+  Fail = "500",
 }

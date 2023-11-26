@@ -77,6 +77,24 @@ export function isPromise<T>(obj): obj is Promise<T> {
   return !!obj && typeof obj.then === 'function' && typeof obj.catch === 'function';
 }
 
+/**
+ * 是否为Json字符串
+ * @param value 值
+ */
+export let isJson = (json: string): boolean => {
+  if (typeof json != 'string') {
+    console.log('It is not a string!')
+    return false;
+  }
+  try {
+    var obj = JSON.parse(json);
+    return typeof obj == 'object' && obj;
+  } catch (e) {
+    console.log('error：' + json + '!!!' + e);
+    return false;
+  }
+}
+
 //==================== 添加 ====================
 
 /**
@@ -174,6 +192,8 @@ export let toJson = (value: any): string => {
  * @param json json字符串
  */
 export let toJsonObject = <T>(json: string): T => {
+  if (!isJson(json))
+    return null;
   return JSON.parse(json);
 }
 
@@ -223,6 +243,24 @@ export let toList = <T>(value: string, separator: string = ','): T[] => {
  */
 export let to = <T>(value: any): T => {
   return <T>value;
+}
+
+/**
+ * 转换为时间戳
+ * @param date 时间
+ */
+export let toTimestamp = (date: Date): number => {
+  return date?.getTime() || 0;
+}
+
+/**
+ * 时间戳转换为时间
+ * @param timestamp 时间戳
+ */
+export let toDateByTimestamp = (timestamp: number): Date => {
+  if (timestamp.toString().length < 13)
+    timestamp = timestamp * 1000
+  return new Date(timestamp);
 }
 
 //==================== 方法 ====================

@@ -12,6 +12,7 @@ import { Ioc } from './common/ioc';
 import { Html } from './html/html';
 import { Message } from './message/message';
 import { Loading } from "./common/loading";
+import { Storage } from './common/storage';
 import { Url } from "./common/url";
 import { Http } from "./http/http";
 import { WebApi } from "./webapi/web-api";
@@ -40,6 +41,10 @@ export class Meow {
    * 加载操作
    */
   private _loading: Loading | undefined;
+  /**
+   * 浏览器本地存储操作
+   */
+  private _storage: Storage;
   /**
    * Url操作
    */
@@ -120,6 +125,15 @@ export class Meow {
     if (!this._loading)
       this._loading = new Loading(this);
     return this._loading;
+  };
+
+  /**
+   * 浏览器本地存储操作
+   */
+  get storage() {
+    if (!this._storage)
+      this._storage = new Storage(this);
+    return this._storage;
   };
 
   /**

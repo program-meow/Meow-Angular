@@ -28,6 +28,7 @@ export * from "./lib/model/coordinates-3d";
 //响应
 export * from "./lib/response/result";
 export * from "./lib/response/fail-result";
+export * from "./lib/response/state-code-enum";
 
 //导出服务
 export * from "./lib/service/service-base";

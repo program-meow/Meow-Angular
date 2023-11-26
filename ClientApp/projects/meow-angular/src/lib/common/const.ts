@@ -23,4 +23,11 @@ export class Const {
   static uuid = (): string => {
     return UUID.UUID();
   }
+
+  /**
+   * 当前时间戳
+   */
+  static timestamp = (): number => {
+    return new Date().getTime();
+  }
 }

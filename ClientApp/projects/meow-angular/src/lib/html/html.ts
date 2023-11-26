@@ -7,6 +7,7 @@ import { Scroll } from './scroll';
 import { Mouse } from './mouse';
 import { Style } from './style';
 import { Element } from './element';
+import { Theme } from './theme';
 
 /**
  * Html操作
@@ -32,6 +33,11 @@ export class Html {
    * 元素操作
    */
   private _element: Element | undefined;
+
+  /**
+   * 主题操作
+   */
+  private _theme: Theme | undefined;
 
   /**
    * 初始化Ioc操作
@@ -78,5 +84,15 @@ export class Html {
     if (!this._element)
       this._element = new Element();
     return this._element;
+  }
+
+  /**
+   * 主题操作
+   * @returns
+   */
+  get theme(): Theme {
+    if (!this._theme)
+      this._theme = new Theme();
+    return this._theme;
   }
 }
