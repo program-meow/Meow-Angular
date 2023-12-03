@@ -17,13 +17,15 @@ export * from "./lib/http/http-method";
 export * from "./lib/http/http-content-type";
 
 //导出模型
-export * from "./lib/model/model";
-export * from "./lib/model/key";
-export * from "./lib/model/view-model";
-export * from "./lib/model/query-parameter";
-export * from "./lib/model/page-list";
 export * from "./lib/model/coordinates-2d";
 export * from "./lib/model/coordinates-3d";
+export * from "./lib/model/key";
+export * from "./lib/model/model";
+export * from "./lib/model/page-list";
+export * from "./lib/model/query-parameter";
+export * from "./lib/model/sort";
+export * from "./lib/model/select-item";
+export * from "./lib/model/view-model";
 
 //响应
 export * from "./lib/response/result";
