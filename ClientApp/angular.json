@@ -164,23 +164,23 @@
         }
       }
     },
-    "meow-ng-zorro": {
+    "meow-ng-zorro-antd-context-menu": {
       "projectType": "library",
-      "root": "projects/meow-ng-zorro",
-      "sourceRoot": "projects/meow-ng-zorro/src",
+      "root": "projects/meow-ng-zorro-antd-context-menu",
+      "sourceRoot": "projects/meow-ng-zorro-antd-context-menu/src",
       "prefix": "lib",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
-            "project": "projects/meow-ng-zorro/ng-package.json"
+            "project": "projects/meow-ng-zorro-antd-context-menu/ng-package.json"
           },
           "configurations": {
             "production": {
-              "tsConfig": "projects/meow-ng-zorro/tsconfig.lib.prod.json"
+              "tsConfig": "projects/meow-ng-zorro-antd-context-menu/tsconfig.lib.prod.json"
             },
             "development": {
-              "tsConfig": "projects/meow-ng-zorro/tsconfig.lib.json"
+              "tsConfig": "projects/meow-ng-zorro-antd-context-menu/tsconfig.lib.json"
             }
           },
           "defaultConfiguration": "production"
@@ -192,7 +192,7 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/meow-ng-zorro/tsconfig.spec.json"
+            "tsConfig": "projects/meow-ng-zorro-antd-context-menu/tsconfig.spec.json"
           }
         }
       }

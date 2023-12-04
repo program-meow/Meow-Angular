@@ -1,0 +1,36 @@
+{
+  "name": "meow-ng-zorro-antd-context-menu",
+  "version": "0.1.1",
+  "author": "程序喵 <455855199@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/program-meow/meow-angular"
+  },
+  "homepage": "https://github.com/program-meow/meow-angular",
+  "license": "MIT",
+  "keywords": [
+    "meow",
+    "antd",
+    "ng-zorro-antd",
+    "angular"
+  ],
+  "peerDependencies": {
+    "@angular/core": "^17.0.0",
+    "@angular/common": "^17.0.0",
+    "@angular/forms": "^17.0.0",
+    "ng-zorro-antd": "^17.0.0",
+    "lodash-es": "^4.17.21",
+    "date-fns": "^2.30.0",
+    "rxjs": "^7.8.1",
+
+    "ng-event-bus": "^5.2.0",
+    "angular-oauth2-oidc": "^15.0.1",
+
+    "meow-angular": "^0.1.13"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+  }
+}

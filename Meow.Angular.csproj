@@ -22,8 +22,43 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\projects\meow-angular-ng-zorro-antd-context-menu\" />
-    <Folder Include="ClientApp\projects\meow-angular-ng-zorro-antd\src\lib\" />
+    <None Remove="ClientApp\projects\meow-ng-zorro-antd-context-menu\ng-package.json" />
+    <None Remove="ClientApp\projects\meow-ng-zorro-antd-context-menu\package.json" />
+    <None Remove="ClientApp\projects\meow-ng-zorro-antd-context-menu\tsconfig.lib.json" />
+    <None Remove="ClientApp\projects\meow-ng-zorro-antd-context-menu\tsconfig.lib.prod.json" />
+    <None Remove="ClientApp\projects\meow-ng-zorro-antd-context-menu\tsconfig.spec.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\projects\meow-ng-zorro-antd-context-menu\ng-package.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\projects\meow-ng-zorro-antd-context-menu\package.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\projects\meow-ng-zorro-antd-context-menu\tsconfig.lib.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\projects\meow-ng-zorro-antd-context-menu\tsconfig.lib.prod.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="ClientApp\projects\meow-ng-zorro-antd-context-menu\tsconfig.spec.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\projects\meow-ng-zorro-antd\src\lib\" />
     <Folder Include="ClientApp\projects\meow-angular\src\lib\auth\" />
   </ItemGroup>
 

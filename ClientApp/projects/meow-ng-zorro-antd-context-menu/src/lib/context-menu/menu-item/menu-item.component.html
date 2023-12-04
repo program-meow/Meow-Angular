@@ -1,0 +1,16 @@
+<div class="menu">
+  <nz-card>
+    <ng-container *ngFor="let group of menuGroups; index as goup_index;">
+      <ng-container *ngFor="let menu of group.menus; index as menu_index;">
+        <div nz-card-grid (mousedown)="mousedown(menu)" (mouseenter)="mouseenter($event,menu)">
+          <span class="icon" nz-icon [nzType]="menu.icon" nzTheme="outline"></span>
+          <span>{{ menu.name }}</span>
+          <span class="right-icon" nz-icon nzType="right" nzTheme="outline"
+            [ngStyle]="{opacity:menu&&menu.childs&&menu.childs.length>0?1:0}">
+          </span>
+        </div>
+      </ng-container>
+      <nz-divider *ngIf="goup_index!==menuGroups.length-1" style="margin: 0;"></nz-divider>
+    </ng-container>
+  </nz-card>
+</div>
